@@ -603,10 +603,16 @@ namespace HeroesCameraEditor
 
         public void DetermineLeaderPositionPointers()
         {
-            MemManager.TryAttachToProcess("SONIC HEROES(TM)");
+            if (ProcessIsAttached == false)
+                MemManager.TryAttachToProcess("Tsonic_win.exe");
             Pointer0X = new IntPtr(MemManager.ReadUInt32(new IntPtr(MemManager.ReadUInt32(new IntPtr(0x400000 + 0x5ce820))) + 0x398) + 0x28);
             Pointer0Y = new IntPtr(MemManager.ReadUInt32(new IntPtr(MemManager.ReadUInt32(new IntPtr(0x400000 + 0x5ce820))) + 0x398) + 0x2c);
             Pointer0Z = new IntPtr(MemManager.ReadUInt32(new IntPtr(MemManager.ReadUInt32(new IntPtr(0x400000 + 0x5ce820))) + 0x398) + 0x30);
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            MemManager.TryAttachToProcess("Tsonic_win.exe");
         }
     }
 
@@ -630,12 +636,12 @@ namespace HeroesCameraEditor
         private UInt32 PROCESS_ALL_ACCESS = 0x1f0fff;
 
         private UInt32 PROCESS_VM_READ = 0x10;
-        public bool TryAttachToProcess(string windowCaption)
+        public bool TryAttachToProcess(string ProcessName)
         {
             Process[] _allProcesses = Process.GetProcesses();
             foreach (Process pp in _allProcesses)
-            {
-                if (pp.MainWindowTitle.ToLower().Contains(windowCaption.ToLower()))
+            {                
+                if (pp.ProcessName.ToLower().Contains(ProcessName.ToLower()))
                 {
                     //found it! proceed.
                     return TryAttachToProcess(pp);

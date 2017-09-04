@@ -90,6 +90,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
@@ -167,7 +168,7 @@
             this.groupBox1.Size = new System.Drawing.Size(491, 46);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Camera Settings (Type, Unknown, Unknown, Activation, Trigger)";
+            this.groupBox1.Text = "Camera Settings (Type, Speed, Unknown, Activation, Trigger)";
             // 
             // numericUpDown5
             // 
@@ -681,6 +682,7 @@
             // 
             // groupBox13
             // 
+            this.groupBox13.Controls.Add(this.buttonRefresh);
             this.groupBox13.Controls.Add(this.buttonTeleport);
             this.groupBox13.Controls.Add(this.buttonGetTrigger);
             this.groupBox13.Controls.Add(this.buttonGetC);
@@ -689,7 +691,7 @@
             this.groupBox13.Controls.Add(this.buttonGetCamera);
             this.groupBox13.Location = new System.Drawing.Point(153, 391);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(359, 80);
+            this.groupBox13.Size = new System.Drawing.Size(439, 80);
             this.groupBox13.TabIndex = 8;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Sonic Heroes Stuff";
@@ -836,6 +838,16 @@
             this.groupBox15.TabIndex = 11;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Offset B (X, Y)";
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Location = new System.Drawing.Point(357, 48);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(75, 23);
+            this.buttonRefresh.TabIndex = 12;
+            this.buttonRefresh.Text = "Refresh";
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // CameraEditor
             // 
@@ -1004,5 +1016,6 @@
         private System.Windows.Forms.Button buttonGetB;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.Button buttonRefresh;
     }
     }
